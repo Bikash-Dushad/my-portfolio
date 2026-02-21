@@ -1,0 +1,169 @@
+/* Main Navbar Container */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  position: relative;
+}
+
+/* Navigation Links Container */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links */
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+/* Underline hover animation */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Connect Button */
+.nav-cta button {
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-cta button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Avatar */
+.nav-logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Hamburger Menu Icon - Hidden by default */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.4s ease;
+  border-radius: 3px;
+}
+
+/* Hamburger Animation */
+.menu-icon.open span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav-bar {
+    padding: 20px 30px;
+  }
+
+  /* Show hamburger menu */
+  .menu-icon {
+    display: flex;
+  }
+
+  /* Hide nav-links by default on mobile */
+  .nav-end {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 90;
+  }
+
+  /* Show nav-links when menu is open */
+  .nav-end.active {
+    right: 0;
+  }
+
+  /* Stack links vertically */
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+  }
+
+  /* Adjust button for mobile */
+  .nav-cta button {
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+  .nav-bar {
+    padding: 15px 20px;
+  }
+
+  .nav-end {
+    width: 85%;
+  }
+
+  .nav-logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
