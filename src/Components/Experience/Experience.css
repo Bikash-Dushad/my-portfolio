@@ -1,0 +1,209 @@
+/* ── Section ── */
+.experience {
+  padding: 60px 20px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+/* ── Title ── */
+.experience-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 60px;
+  color: white;
+  text-align: center;
+}
+
+.experience-title span {
+  color: #4a9eff;
+}
+
+/* ── Timeline Wrapper ── */
+.timeline {
+  --line-offset: 7px;   /* line's left position from .timeline edge */
+  --dot-size: 13px;     /* dot diameter */
+  --gap: 36px;          /* space between line and card content */
+
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  /* cards start after: line-offset + 1px line + gap */
+  padding-left: calc(var(--line-offset) + 1px + var(--gap));
+}
+
+/* ── Vertical Line ── */
+/* top: aligns to dot center (dot top offset 7px + half dot size ~6px = 13px)
+   bottom: stops at last dot center so no trailing line hangs below */
+.timeline-line {
+  position: absolute;
+  left: var(--line-offset);
+  top: 13px;
+  bottom: 13px;
+  width: 1px;
+  background: rgba(74, 158, 255, 0.25);
+}
+
+/* ── Each Entry ── */
+.timeline-item {
+  position: relative;
+  margin-bottom: 56px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Dot — center aligned to the line ── */
+/*  The dot needs to sit at left: var(--line-offset) from .timeline,
+    but .timeline-dot is inside .timeline-item which starts at padding-left.
+    So from .timeline-item left edge: -(padding-left) + line-offset - dot-size/2  */
+.timeline-dot {
+  position: absolute;
+  left: calc(-1px - var(--gap) - var(--dot-size) / 2);
+  top: 7px;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  border: 2px solid #4a9eff;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  background: #4a9eff;
+}
+
+/* ── Card ── */
+.timeline-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Card Top Row ── */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.job-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.job-company {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4a9eff;
+  margin: 0;
+}
+
+/* ── Right: location + date badge ── */
+.card-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.job-location {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.job-date {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  font-family: monospace;
+}
+
+/* ── Role Bullets ── */
+.job-roles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job-roles li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.65);
+  padding-left: 18px;
+  position: relative;
+}
+
+.job-roles li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(74, 158, 255, 0.6);
+}
+
+/* ── Tablet ── */
+@media screen and (max-width: 768px) {
+  .experience-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .timeline {
+    --line-offset: 6px;
+    --dot-size: 11px;
+    --gap: 28px;
+  }
+
+  .card-top {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-right {
+    flex-wrap: wrap;
+  }
+
+  .job-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* ── Mobile ── */
+@media screen and (max-width: 480px) {
+  .experience {
+    padding: 40px 16px 80px;
+  }
+
+  .experience-title {
+    font-size: 1.7rem;
+  }
+
+  .job-roles li {
+    font-size: 0.88rem;
+  }
+}

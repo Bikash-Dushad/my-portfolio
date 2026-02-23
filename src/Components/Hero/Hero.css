@@ -1,14 +1,13 @@
 .hero {
-  min-height: calc(100vh - 80px); /* Subtract navbar height */
+  min-height: auto; /* Changed from 100vh */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 100px 20px 60px; /* Reduced bottom padding */
   position: relative;
   color: white;
   text-align: center;
-  background: transparent; /* Since body is black */
 }
 
 /* Main Heading */
@@ -159,10 +158,10 @@
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
   .hero {
-    min-height: calc(100vh - 70px);
-    padding: 20px 15px;
-    justify-content: flex-start;
-    padding-top: 60px;
+    min-height: auto; /* Changed from calc(100vh - 70px) */
+    padding: 80px 15px 40px; /* Reduced padding */
+    justify-content: center;
+    padding-top: 80px;
   }
 
   .hero h1 {
@@ -182,7 +181,7 @@
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    max-width: 280px;
+    margin-bottom: 40px; /* Reduced from 60px */
   }
 
   .hero-buttons button {

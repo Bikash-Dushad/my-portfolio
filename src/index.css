@@ -9,5 +9,50 @@
 
 body {
   min-height: 100vh;
-  background: #161513;
+  background: #0a0a0a;
+  position: relative;
+}
+
+/* Beautiful Animated Gradient Background - Consistent across all devices */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(118, 75, 162, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 10% 70%, rgba(102, 126, 234, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 40%),
+    linear-gradient(135deg, #0a0a0a 0%, #151515 100%);
+  z-index: -2;
+}
+
+/* Subtle noise texture for depth */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: white;
 }

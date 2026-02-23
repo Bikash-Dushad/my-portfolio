@@ -1,0 +1,220 @@
+.about {
+  min-height: auto; /* Changed from 100vh */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 100px; /* Reduced top padding */
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+/* Main Heading - Matching Hero H1 */
+.about-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 30px;
+  background: linear-gradient(135deg, #ffffff 0%, #a8b8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 1s ease;
+}
+
+/* Description - Matching Hero Description */
+.about-description {
+  font-size: 1.2rem;
+  max-width: 800px;
+  line-height: 1.8;
+  margin: 0 auto 50px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+/* Details Container - Similar to Hero Buttons */
+.about-details {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 1s ease 0.4s backwards;
+}
+
+/* Individual Detail Items */
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+/* Add decorative line between items */
+.detail-item:first-child::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+/* Labels - Similar to Role style but uppercase */
+.detail-label {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Values - More prominent */
+.detail-value {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+  color: white;
+  background: linear-gradient(135deg, #ffffff 0%, #a8b8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Import animations from hero */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+  .about {
+    padding: 60px 20px;
+  }
+
+  .about-title {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+  }
+
+  .about-description {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-bottom: 40px;
+  }
+
+  .detail-value {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .about {
+    min-height: auto;
+    padding: 30px 15px 80px; /* Reduced top padding */
+    justify-content: center;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .about-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .about-details {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+
+  /* Remove vertical divider on mobile */
+  .detail-item:first-child::after {
+    display: none;
+  }
+
+  /* Add horizontal divider between items on mobile */
+  .detail-item:first-child {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .detail-label {
+    font-size: 0.9rem;
+  }
+
+  .detail-value {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  .about {
+    padding: 40px 15px;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+  }
+
+  .detail-label {
+    font-size: 0.85rem;
+  }
+
+  .detail-value {
+    font-size: 1.1rem;
+  }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .about {
+    min-height: auto;
+    padding: 60px 20px;
+  }
+}
+
+/* Optional: Subtle background effect matching hero */
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(102, 126, 234, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
