@@ -155,7 +155,7 @@ const Footer = ({
 
           <div className="footer-social">
             <a
-              href="https://www.linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/bikash-dushad/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
