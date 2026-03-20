@@ -34,7 +34,7 @@ const Projects = forwardRef((props, ref) => {
       name: "Habit Tracker",
       thumbnail:
         "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600",
-      demoLink: "https://github.com/Bikash-Dushad",
+      demoLink: "https://habit-tracker-frontend-lyart.vercel.app/",
       details: [
         "Proficient in implementing user authentication features,",
         "Skilled in enabling users to add, modify, and delete multiple habits, ",
